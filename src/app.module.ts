@@ -44,7 +44,7 @@ import { RedisCacheModule } from '@app/redis-cache';
           },
         }
       },
-      autoSchemaFile: join(process.cwd(), 'apps/bugwozi-main/src/schema.gql'),
+      autoSchemaFile: join(process.cwd(), 'libs/prisma/schema.gql'),
       definitions: {
         path: join(__dirname, 'types/graphql.ts'),
       },
