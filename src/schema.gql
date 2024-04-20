@@ -1,0 +1,41 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ProfileEntity {
+  id: Int!
+  createAt: DateTime!
+  updateAt: DateTime!
+  password: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type UserEntity {
+  id: Int!
+  createAt: DateTime!
+  updateAt: DateTime!
+  account: String!
+  name: String!
+  role: Int!
+  profile: ProfileEntity!
+  profileId: Int!
+  token: String
+}
+
+type TestEntity {
+  now: Float!
+  msg: String!
+}
+
+type Query {
+  currentUser: UserEntity!
+  test: TestEntity!
+}
+
+type Mutation {
+  auth(account: String!, password: String!): UserEntity!
+}
